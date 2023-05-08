@@ -1,0 +1,742 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=IBM+Plex+Serif:wght@300&family=Jura:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=IBM+Plex+Serif:wght@300&family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=IBM+Plex+Serif:wght@300&family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=IBM+Plex+Serif:wght@300&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=IBM+Plex+Serif:wght@300&family=Josefin+Sans:wght@300&display=swap');
+
+.logoCustome{
+ width: 17vh; 
+//  object-fit: cover;  
+}
+
+.headerCustome{
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerName{
+    // text-align: center;
+    margin: auto;
+    color:rgb(101, 100, 100);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 45px;
+    text-decoration: none;
+}
+    
+
+.profileBtn{
+    border: none;
+    background: none;
+    width: 80px;
+
+    i{
+        font-size: 50px;
+        color: rgb(74, 135, 74);
+    }
+}
+
+.navbar-collapse{
+    flex-grow: 0;
+}
+
+.heightCust{
+    min-height: 91.1vh;
+    max-height: auto;
+}
+
+.bigSidebar{
+    p{
+        font-size: 30px;
+        color: #262424;
+        letter-spacing: 1px;
+        font-family: 'Castoro Titling', cursive;
+        font-family: 'IBM Plex Serif', serif;
+        font-family: 'Jura', sans-serif;
+        font-weight: bold;
+    }
+
+    ul li{
+        list-style:none;
+        letter-spacing: 1px;
+        font-size: 20px;
+        font-family: 'Castoro Titling', cursive;
+        font-family: 'IBM Plex Serif', serif;
+        font-family: 'Rajdhani', sans-serif;
+
+    }
+}
+
+.mainContainer{
+    .tagInput{
+        width: 15%;
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-family: 'Castoro Titling', cursive;
+        font-family: 'IBM Plex Serif', serif;
+        font-family: 'Rajdhani', sans-serif;
+    }
+    
+    .colorInput{
+        width: 3%;
+    }
+    
+    .taskInput{
+        width: 40%;
+        font-size: 25px;
+        font-family: 'Castoro Titling', cursive;
+        font-family: 'IBM Plex Serif', serif;
+        font-family: 'Rajdhani', sans-serif;
+    }
+
+    .searchHading{
+        font-size: 35px;
+        font-family: 'Castoro Titling', cursive;
+        font-family: 'IBM Plex Serif', serif;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 1px;
+    }
+
+    #taskSearch{
+        width: 40%;
+        height: 45px;
+        font-size: 17px;
+        font-family: 'Castoro Titling', cursive;
+        font-family: 'IBM Plex Serif', serif;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 30px;
+    }
+    
+    .searchLbl{
+        font-size: 20px;
+        font-family: 'Castoro Titling', cursive;
+        font-family: 'IBM Plex Serif', serif;
+        font-family: 'Poppins', sans-serif;
+    }
+
+}
+
+.smallSidebar{
+    .tagsPart{
+        display: flex;
+        // flex-wrap: wrap;
+        overflow-x: auto;
+        border-bottom: 1px solid grey;
+
+        div p{
+            font-size: 25px;
+            color:#262424;;
+            text-align: center;
+            margin: auto;
+            padding: 3px 14px;
+            border: 1px solid rgb(175, 175, 175);
+            border-radius: 10px;
+            font-family: 'IBM Plex Serif', serif;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.ownFullTask{
+    border-radius: 10px;
+    width: 50vw;
+    padding: 10px;
+
+    .ownTagPart{
+        background-color: #9DC3FC;
+
+        span{
+            display: block;
+            font-size: 19px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            color: #0047FF;
+            text-align: center;
+            font-family: 'Castoro Titling', cursive;
+            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        
+    }
+
+    .checkBtn{
+        width: 22px;
+        height: 22px;
+    }
+
+    .taskSummary{
+        p{
+            font-size: 25px;
+            font-family: 'Castoro Titling', cursive;
+            font-family: 'IBM Plex Serif', serif;
+            font-family: 'Jura', sans-serif;
+            font-weight: bold;
+            color: #5f5f5f;
+        }
+    }
+
+    .editBtn{
+        border: 1px solid green;
+        background-color: white;
+        color: green;
+        border-radius: 10px;
+
+        &:hover{
+            border: 1px solid white;
+            background-color: green;
+            color: white;
+        }
+    }
+
+    .deleteBtn{
+        border: 1px solid red;
+        background-color: white;
+        color: red;
+        border-radius: 10px;
+
+        &:hover{
+            border: 1px solid white;
+            background-color: red;
+            color: white;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1900px) {
+    .tagInput {
+        width: 17% !important;
+    }
+
+    .colorInput{
+        width: 4% !important;
+    }
+
+    .taskInput{
+        width: 70% !important;
+    }
+
+    .searchHading{
+        font-size: 32px !important;
+    }
+
+    #taskSearch{
+        width:45% !important;
+        height: 45px !important;
+        font-size: 20px;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 30px !important;
+    }
+    
+    .searchLbl{
+        font-size: 20px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 65vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                font-size: 21px;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }  
+        }
+
+        .editBtn{
+            margin-left: 20px;
+        }
+
+        .taskSummary{
+            p{
+                font-size: 25px;
+            }
+        }     
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .tagInput {
+        width: 20% !important;
+    }
+
+    .colorInput{
+        width: 5% !important;
+    }
+
+    .taskInput{
+        width: 80% !important;
+    }
+
+    .searchHading{
+        font-size: 32px !important;
+    }
+
+    #taskSearch{
+        width:45% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 30px !important;
+    }
+    
+    .searchLbl{
+        font-size: 20px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 65vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                font-size: 21px;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }  
+        }
+    
+        .taskSummary{
+            p{
+                font-size: 25px;
+            }
+        }     
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .tagInput {
+        width: 20% !important;
+    }
+
+    .colorInput{
+        width: 6% !important;
+    }
+
+    .taskInput{
+        width: 85% !important;
+    }
+
+    .searchHading{
+        font-size: 30px !important;
+    }
+
+    #taskSearch{
+        width:45% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 28px !important;
+    }
+    
+    .searchLbl{
+        font-size: 17px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 65vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                font-size: 21px;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }  
+        }
+
+        .taskSummary{
+            p{
+                font-size: 25px;
+            }
+        }     
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .tagInput {
+        width: 24% !important;
+    }
+
+    .colorInput{
+        width: 6% !important;
+    }
+
+    .taskInput{
+        width: 90% !important;
+    }
+
+    .searchHading{
+        font-size: 28px !important;
+    }
+
+    #taskSearch{
+        width:40% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 27px !important;
+    }
+    
+    .searchLbl{
+        font-size: 15px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 65vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                font-size: 17px;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }  
+        }
+
+        .taskSummary{
+            p{
+                font-size: 23px;
+            }
+        }     
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .tagInput {
+        width: 28% !important;
+    }
+
+    .colorInput{
+        width: 10% !important;
+    }
+
+    .taskInput{
+        width: 95% !important;
+    }
+
+    .searchHading{
+        font-size: 33px !important;
+    }
+
+    #taskSearch{
+        width:80% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 30px !important;
+    }
+    
+    .searchLbl{
+        font-size: 21px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 60vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                font-size: 17px !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }  
+        }
+
+        .taskSummary{
+            p{
+                font-size: 20px;
+            }
+        }     
+    }
+}
+
+@media screen and (max-width: 778px) {
+
+    .tagInput {
+        width: 25% !important;
+    }
+
+    .colorInput{
+        width: 10% !important;
+    }
+
+    .taskInput{
+        width: 95% !important;
+    }
+
+    .searchHading{
+        font-size: 33px !important;
+    }
+
+    #taskSearch{
+        width:80% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 30px !important;
+    }
+    
+    .searchLbl{
+        font-size: 21px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 60vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }  
+        }    
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .tagInput {
+        width: 45% !important;
+    }
+
+    .colorInput{
+        width: 12% !important;
+    }
+
+    .taskInput{
+        width: 95% !important;
+    }
+
+    .searchHading{
+        font-size: 32px !important;
+    }
+
+    #taskSearch{
+        width:90% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 30px !important;
+    }
+    
+    .searchLbl{
+        font-size: 20px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 90vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }  
+        }  
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tagInput {
+        width: 45% !important;
+    }
+
+    .colorInput{
+        width: 16% !important;
+    }
+
+    .taskInput{
+        width: 95% !important;
+    }
+
+    .searchHading{
+        font-size: 30px !important;
+    }
+
+    #taskSearch{
+        width: 95% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 30px !important;
+    }
+    
+    .searchLbl{
+        font-size: 17px !important;
+    }
+
+    .me-5 {
+        margin-right: 0rem!important;
+   }
+
+    .ownFullTask{
+        width: 90vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }  
+        }    
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .tagInput {
+        width: 80% !important;
+    }
+
+    .colorInput{
+        width: 30% !important;
+    }
+
+    .taskInput{
+        width: 95% !important;
+    }
+
+    .searchHading{
+        font-size: 25px !important;
+    }
+
+    #taskSearch{
+        width: 95% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 25px !important;
+    }
+    
+    .searchLbl{
+        font-size: 13px !important;
+    }
+
+    .me-5 {
+         margin-right: 0rem!important;
+    }
+
+    .ownFullTask{
+        width: 90vw !important;
+        padding: 10px !important;
+    
+        .ownTagPart{
+            span{
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }  
+        }     
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .tagInput {
+        width: 50% !important;
+    }
+
+    .colorInput{
+        width: 80% !important;
+    }
+
+    .taskInput{
+        width: 95% !important;
+    }
+
+    .smallSidebar{
+        .tagsPart{
+            display: flex;
+    
+            div p{
+                font-size: 20px;
+            }
+        }
+    }
+
+    .searchHading{
+        font-size: 20px !important;
+    }
+
+    #taskSearch{
+        width: 95% !important;
+        height: 45px !important;
+    }
+    
+    #flexSwitchCheckDefault{
+        font-size: 25px !important;
+    }
+    
+    .searchLbl{
+        font-size: 10px !important;
+    }
+    
+//     .me-5 {
+//         margin-right: 0rem!important;
+//    }
+
+   .ownFullTask{
+       width: 90vw !important;
+       padding: 10px !important;
+   
+       .ownTagPart{
+           span{
+               padding-left: 10px !important;
+               padding-right: 10px !important;
+           }  
+       }
+
+       .editBtn{
+           margin-left: 15px;
+       }
+   
+       .taskSummary{
+           p{
+               font-size: 20px;
+           }
+       }     
+   }
+}
