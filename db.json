@@ -1,19 +1,25 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "task_name": "today solved 2 program",
+      "task_done": false,
+      "task_name": "create program",
       "tag_name": "Work",
-      "tag_fg_color": "#0047FF",
-      "tag_bg_color": "#9DC3FC",
-      "task_done": false
-    }
-  ],
-
-  "tags":[
+      "tag_fg_color": "#ffffff",
+      "id": 1
+    },
     {
-      "id": 1,
-      "avail_tag": "Work"
+      "task_done": false,
+      "tag_name": "Personal",
+      "task_name": "Call brother at 9'0 clock",
+      "tag_fg_color": "#42a8bd",
+      "tag_bg_color": "#1f5def",
+      "id": 2
+    },
+    {
+      "task_done": false,
+      "tag_name": "Work",
+      "task_name": "Create To-do List App",
+      "id": 3
     }
   ]
 }
