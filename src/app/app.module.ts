@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
+import { DataTablesModule } from "angular-datatables";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

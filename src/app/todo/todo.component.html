@@ -47,9 +47,9 @@
 
             <!-- TAGS SIDEBAR PART -->
 
-            <p class="ps-3  pt-2"><span><i class="bi bi-tags"></i> </span> Tag</p>
-            <ul *ngFor="let i of allTasks" class="ms-4">
-                <li> {{ i.tag_name }}</li>
+            <p class="ps-3  pt-2" (click)="tagSearchData('')"><span><i class="bi bi-tags"></i> </span> Tag</p>
+            <ul *ngFor="let i of removeDuplicatesArrayByName " class="ms-4">
+                <li (click)="tagSearchData(i.tag_name)" style="cursor: pointer;">{{ i.tag_name }}</li>
             </ul>
         </div>
 
@@ -72,11 +72,16 @@
 
             <!-- USER TASK & TAGS INPUT PART -->
 
-            <div class="row d-flex flex-column mt-4" (keyup.enter)="addTask()">
+            <div class="row d-flex flex-column mt-4" (keyup.enter)="updateAddBtn === false ? addTask() : updateTask()">
                 <div
                     class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
-                    <input type="text" class="form-control tagInput" [(ngModel)]="getTasks.tag_name"
+                    <input type="text" class="form-control tagInput" list="tagsDetails" [(ngModel)]="getTasks.tag_name"
                         placeholder="Enter Tag">
+                        <datalist id="tagsDetails" >
+                            <ng-container *ngFor="let i of allTasks">
+                                <option value="{{i.tag_name}}">
+                            </ng-container>
+                        </datalist>
                     <input type="color" class="form-control colorInput" [(ngModel)]="getTasks.tag_fg_color"
                         placeholder="Username">
                     <input type="color" class="form-control colorInput" [(ngModel)]="getTasks.tag_bg_color"
@@ -97,13 +102,12 @@
                 <div
                     class="d-flex flex-xxl-row align-content-xxl-center flex-xl-row align-content-xl-center flex-lg-row align-content-lg-center flex-md-column align-content-md-center flex-sm-column align-content-sm-center flex-column align-items-center justify-content-around ">
                     <p class="searchHading">Tasks : </p>
-                    <input class="form-control" list="datalistOptions" id="taskSearch" placeholder="Type to search...">
+                    <input class="form-control" list="datalistOptions" (keyup)="searchTask()" [(ngModel)]="searchDatas" id="taskSearch" placeholder="Type to search...">
                     <datalist id="datalistOptions">
-                        <option value="San Francisco">
-                        <option value="New York">
-                        <option value="Seattle">
-                        <option value="Los Angeles">
-                        <option value="Chicago">
+                        <ng-container *ngFor="let i of allTasks">
+                            <option value="{{i.tag_name}}">
+                            <option value="{{i.task_name}}">
+                        </ng-container>
                     </datalist>
                     <div class="form-check form-switch d-flex align-items-center mt-2">
                         <input class="form-check-input" (change)="allAndCompletedTasks($event)" type="checkbox" role="switch" id="flexSwitchCheckDefault">&nbsp;
@@ -133,8 +137,8 @@
                                                 [style.background-color]="i.tag_bg_color">{{ i.tag_name }}</span></div>
                                         <div>
                                             <button class="actionBtn editBtn me-2"> <i
-                                                    class="bi bi-pencil-square p-2"></i> </button>
-                                            <button class="actionBtn deleteBtn"> <i class="bi bi-trash3 p-2"></i>
+                                                    class="bi bi-pencil-square p-2" (click)="fillData(i)"></i> </button>
+                                            <button class="actionBtn deleteBtn" (click)="deleteTask(i)"> <i class="bi bi-trash3 p-2"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -170,8 +174,8 @@
                                                 [style.background-color]="i.tag_bg_color">{{ i.tag_name }}</span></div>
                                         <div>
                                             <button class="actionBtn editBtn me-2"> <i
-                                                    class="bi bi-pencil-square p-2"></i> </button>
-                                            <button class="actionBtn deleteBtn"> <i class="bi bi-trash3 p-2"></i>
+                                                    class="bi bi-pencil-square p-2" (click)="fillData(i)"></i> </button>
+                                            <button class="actionBtn deleteBtn" (click)="deleteTask(i)"> <i class="bi bi-trash3 p-2"></i>
                                             </button>
                                         </div>
                                     </div>

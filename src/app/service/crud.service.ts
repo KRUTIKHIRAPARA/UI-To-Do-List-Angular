@@ -26,11 +26,15 @@ export class CrudService {
   }
 
   updateTaskDoneData(body:TodoPermision){
-    return this._http.put(`${this.tasksUrl}/${body.id}`,body);
+
+    const task_update= false;
+
+    return this._http.put(`${this.tasksUrl}/${body.id}`,{task_name:body.task_name, tag_name:body.tag_name, tag_fg_color:body.tag_fg_color, tag_bg_color:body.tag_bg_color, task_done:task_update});
   }
   
   updateTaskUnDoneData(body:TodoPermision){
-    return this._http.put(`${this.tasksUrl}/${body.id}`,body.task_done=true);
+    const task_up = true;
+    return this._http.put(`${this.tasksUrl}/${body.id}`,{task_name:body.task_name, tag_name:body.tag_name, tag_fg_color:body.tag_fg_color, tag_bg_color:body.tag_bg_color, task_done:true});
   }
 
   deleteTaskData(body:TodoPermision){
