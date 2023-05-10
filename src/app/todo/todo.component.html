@@ -59,10 +59,15 @@
 
             <!-- SMALL DEVICE TAGS SIDEBAR PART  -->
 
-            <div *ngFor="let i of allTasks" class="tagsPart">
-                <div class="m-2">
-                    <p class="">{{ i.tag_name }}</p>
+            <div class="tagsPart">
+                <div (click)="getAllTasks()" class="m-2">
+                    <p >All</p>
                 </div>
+                <ng-container *ngFor="let i of allTasks" >
+                    <div (click)="tagSearchData(i.tag_name)" class="m-2">
+                        <p >{{ i.tag_name }}</p>
+                    </div>
+                </ng-container>
             </div>
         </div>
 
