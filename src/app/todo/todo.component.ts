@@ -18,6 +18,7 @@ export class TodoComponent {
   
   conditionTF = false;
   updateAddBtn = false;
+
   
   searchDatas : string;
   
@@ -36,6 +37,10 @@ export class TodoComponent {
       return arr.map(mapObj => mapObj[Prop]).indexOf(obj[Prop]) === pos;
     });
   }
+
+  // removeDuplicates(arr){
+  //   return [...new Set(arr)];
+  // }
   
 
   // Change Completed or All task show
@@ -146,6 +151,7 @@ export class TodoComponent {
         console.log(res);
         this.allTags = res;
         this.removeDuplicatesArrayByName = this.removeDuplicates(res, "tag_name")
+        // this.removeDuplicatesArrayByName = this.removeDuplicates(res)
       },
       error:(err)=>{
         this._toastr.error(err.status);
