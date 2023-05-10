@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { CrudService, TodoPermision } from '../service/crud.service';
-import { Subject, filter} from 'rxjs';
 
 @Component({
   selector: 'app-todo',
@@ -12,29 +11,34 @@ import { Subject, filter} from 'rxjs';
 export class TodoComponent {
 
   allTasks: Array<TodoPermision> = new Array();
-  allTags = new Array();
   removeDuplicatesArrayByName: Array<any>= [];
+  allTags = new Array();
+
   getTasks: TodoPermision;
+  
   conditionTF = false;
   updateAddBtn = false;
+  
   searchDatas : string;
   
   constructor(private _crud: CrudService, private _toastr: ToastrService) { }
-  // this._toastr.success('Hello world!', 'Toastr fun!');
-  
 
   ngOnInit(): void {
     this.getTasks = new TodoPermision;
-    
     this.getAllTasks();
-    
   }
 
+
+  // Remove Duplicates Tags
+  
   removeDuplicates(myArray, Prop) {
     return myArray.filter((obj, pos, arr) => {
       return arr.map(mapObj => mapObj[Prop]).indexOf(obj[Prop]) === pos;
     });
   }
+  
+
+  // Change Completed or All task show
   
   allAndCompletedTasks(event){
     if(event.target.checked){
@@ -45,17 +49,20 @@ export class TodoComponent {
     }
   }
   
+
+  // Move done task
+  
   convertDoneOnUnDone(event,i){
       if(event.target.checked){
         this.conditionTF = true;  
         this._crud.updateTaskUnDoneData(i).subscribe({
           next: (res) => {
-              this.conditionTF = false;  
-              this.getAllTasks();
-            },
-            error:(err)=>{
-              this._toastr.error(err);
-            }
+            this.conditionTF = false;  
+            this.getAllTasks();
+          },
+          error:(err)=>{
+            this._toastr.error(err);
+          }
           });
         }
         else{
@@ -68,10 +75,13 @@ export class TodoComponent {
             error:(err)=>{
               this._toastr.error(err);
             }
-          });
+        });
       }
-  }
+    }
 
+
+  // Search tasks method
+  
   searchTask(){
     if (this.searchDatas) {
       let searchEmployee = new Array<TodoPermision>();
@@ -88,7 +98,10 @@ export class TodoComponent {
       this.getAllTasks();
     }
   }
+  
 
+  // Search tags method
+  
   tagSearchData(data){
     if (data) {
       let searchEmployee = new Array<TodoPermision>();
@@ -108,7 +121,10 @@ export class TodoComponent {
       this.getAllTasks();
     }
   }
+  
 
+  // Get all tasks method
+  
   getAllTasks() {
     this._crud.getAllTasksDatas().subscribe({
       next: (res) => {
@@ -120,7 +136,10 @@ export class TodoComponent {
       }
     });
   }
+  
 
+  // Get all tags method
+  
   getAllTags() {
     this._crud.getAllTasksDatas().subscribe({
       next: (res) => {
@@ -133,8 +152,12 @@ export class TodoComponent {
       }
     });
   }
+  
 
+  // Add task method
+  
   addTask(){
+    if(this.getTasks.task_name){
       this._crud.addTaskData(this.getTasks).subscribe({
         next: (res) => {
           this.getTasks = new TodoPermision;
@@ -145,13 +168,24 @@ export class TodoComponent {
           this._toastr.error(err);
         }
       });
+    }
+    else{
+      this._toastr.warning('Warning', 'Please enter task!!!');
+    }
+    
   }
 
+
+  // Edit task time fill data in input part method
+  
   fillData(data:TodoPermision){
     this.getTasks = data;
     this.updateAddBtn = true;
   }
+  
 
+  // Update task method
+  
   updateTask(){
     this._crud.updateTaskData(this.getTasks).subscribe({
       next: (res) => {
@@ -165,6 +199,9 @@ export class TodoComponent {
       }
     });
   }
+  
+
+  // Delete task method
 
   deleteTask(data:TodoPermision){
 

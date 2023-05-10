@@ -47,7 +47,7 @@
 
             <!-- TAGS SIDEBAR PART -->
 
-            <p class="ps-3  pt-2" (click)="tagSearchData('')"><span><i class="bi bi-tags"></i> </span> Tag</p>
+            <p class="ps-3  pt-2" (click)="getAllTasks()" style="cursor: pointer;"><span><i class="bi bi-tags"></i> </span> Tag</p>
             <ul *ngFor="let i of removeDuplicatesArrayByName " class="ms-4">
                 <li (click)="tagSearchData(i.tag_name)" style="cursor: pointer;">{{ i.tag_name }}</li>
             </ul>
