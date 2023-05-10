@@ -11,7 +11,7 @@ import { CrudService, TodoPermision } from '../service/crud.service';
 export class TodoComponent {
 
   allTasks: Array<TodoPermision> = new Array();
-  removeDuplicatesArrayByName: Array<any>= [];
+  removeDuplicatesArrayByName : any= new Array();
   allTags = new Array();
 
   getTasks: TodoPermision;
@@ -31,16 +31,15 @@ export class TodoComponent {
 
 
   // Remove Duplicates Tags
-  
-  removeDuplicates(myArray, Prop) {
-    return myArray.filter((obj, pos, arr) => {
-      return arr.map(mapObj => mapObj[Prop]).indexOf(obj[Prop]) === pos;
-    });
-  }
 
-  // removeDuplicates(arr){
-  //   return [...new Set(arr)];
-  // }
+  removeDuplicates(arr:any){
+    let i = [];
+    for(let j of arr){
+      i.push(j.tag_name);
+    }
+
+    return [...new Set(i)];
+  }
   
 
   // Change Completed or All task show
@@ -148,10 +147,7 @@ export class TodoComponent {
   getAllTags() {
     this._crud.getAllTasksDatas().subscribe({
       next: (res) => {
-        console.log(res);
-        this.allTags = res;
-        this.removeDuplicatesArrayByName = this.removeDuplicates(res, "tag_name")
-        // this.removeDuplicatesArrayByName = this.removeDuplicates(res)
+        this.removeDuplicatesArrayByName = this.removeDuplicates(res)
       },
       error:(err)=>{
         this._toastr.error(err.status);
