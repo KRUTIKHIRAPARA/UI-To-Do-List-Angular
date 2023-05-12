@@ -80,7 +80,7 @@
             <div class="row d-flex flex-column mt-4" (keyup.enter)="updateAddBtn === false ? addTask() : updateTask()">
                 <div
                     class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
-                    <input type="text" class="form-control tagInput" list="tagsDetails" [(ngModel)]="getTasks.tag_name"
+                    <input type="text" class="form-control text-lowercase tagInput" list="tagsDetails" [(ngModel)]="getTasks.tag_name"
                         placeholder="Enter Tag">
                         <datalist id="tagsDetails" >
                             <ng-container *ngFor="let i of allTasks">

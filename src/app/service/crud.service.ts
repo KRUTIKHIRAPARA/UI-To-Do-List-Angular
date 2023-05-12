@@ -8,7 +8,7 @@ export class CrudService {
 
   tasksUrl = 'http://localhost:3000/tasks';
 
-  constructor(private _http : HttpClient) { }
+  constructor(public _http : HttpClient) { }
 
 
   // TASKS CRUD PERFORMS METHODS

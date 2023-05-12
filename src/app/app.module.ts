@@ -9,11 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
 import { DataTablesModule } from "angular-datatables";
+import { AccordionComponent } from './accordion/accordion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent
+    TodoComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,

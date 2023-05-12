@@ -22,7 +22,7 @@ export class TodoComponent {
   
   searchDatas : string;
   
-  constructor(private _crud: CrudService, private _toastr: ToastrService) { }
+  constructor(public _crud: CrudService, public _toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getTasks = new TodoPermision;

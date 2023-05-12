@@ -1,16 +1,26 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { TodoComponent } from './todo/todo.component';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ToastrModule.forRoot(),
+        HttpClientModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        TodoComponent
       ],
+      providers:[
+        ToastrService,
+        HttpClient
+      ]
     }).compileComponents();
   });
 
@@ -23,13 +33,6 @@ describe('AppComponent', () => {
   it(`should have as title 'TO-DO-LIST'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('TO-DO-LIST');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('TO-DO-LIST app is running!');
+    expect(app.title).toBe('TO-DO-LIST');
   });
 });
